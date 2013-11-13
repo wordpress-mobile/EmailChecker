@@ -32,8 +32,8 @@ library in your build.gradle file, for instance:
     |   |-- jni                 # android specific native code
     |   `-- src                 # android specific java code
     `-- ios
-        |---- EmailChecker      # ios specific code
-        `---- EmailCheckerTests # tests
+        |-- EmailChecker        # ios specific code
+        `-- EmailCheckerTests   # tests
 
 ## Apps that use this library
 

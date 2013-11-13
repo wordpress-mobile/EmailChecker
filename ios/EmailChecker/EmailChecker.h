@@ -10,4 +10,6 @@
 
 @interface EmailChecker : NSObject
 
++ (NSString *) suggestDomainCorrection:(NSString *)email;
+
 @end

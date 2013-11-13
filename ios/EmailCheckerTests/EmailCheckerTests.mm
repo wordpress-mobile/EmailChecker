@@ -27,7 +27,7 @@
 
 - (void)testExample {
     EmailDomainSpellChecker *edsc = new EmailDomainSpellChecker();
-    string toTest;
+    std::string toTest;
 
     // Not modified tests
     toTest = "hello@mop.com";
@@ -58,32 +58,17 @@
     XCTAssert(edsc->suggestDomainCorrection(toTest).compare(toTest) == 0, @"%s must not be corrected", toTest.c_str());
 
     toTest = "kikoo@azdoij.cm";
-    XCTAssert(edsc->suggestDomainCorrection(toTest).compare(toTest) == 0, @"%s must not be corrected", toTest.c_str());
+    XCTAssert(edsc->suggestDomainCorrection("kikoo@azdoij.cm").compare(toTest) == 0, @"%s must not be corrected", toTest.c_str());
     
     // Expected suggestions
-    toTest = "hello@gmial.com";
-    XCTAssert(edsc->suggestDomainCorrection(toTest).compare("hello@gmail.com") == 0);
-
-    toTest = "hello@gmai.com";
-    XCTAssert(edsc->suggestDomainCorrection(toTest).compare("hello@gmail.com") == 0);
-
-    toTest = "hello@yohoo.com";
-    XCTAssert(edsc->suggestDomainCorrection(toTest).compare("hello@yahoo.com") == 0);
-
-    toTest = "hello@yhoo.com";
-    XCTAssert(edsc->suggestDomainCorrection(toTest).compare("hello@yahoo.com") == 0);
-
-    toTest = "hello@ayhoo.com";
-    XCTAssert(edsc->suggestDomainCorrection(toTest).compare("hello@yahoo.com") == 0);
-
-    toTest = "hello@yhoo.com";
-    XCTAssert(edsc->suggestDomainCorrection(toTest).compare("hello@yahoo.com") == 0);
-
-    toTest = "hello@outloo.com";
-    XCTAssert(edsc->suggestDomainCorrection(toTest).compare("hello@outlook.com") == 0);
-
-    toTest = "hello@comcats.com";
-    XCTAssert(edsc->suggestDomainCorrection(toTest).compare("hello@comcast.com") == 0);
+    XCTAssert(edsc->suggestDomainCorrection("hello@gmial.com").compare("hello@gmail.com") == 0);
+    XCTAssert(edsc->suggestDomainCorrection("hello@gmai.com").compare("hello@gmail.com") == 0);
+    XCTAssert(edsc->suggestDomainCorrection("hello@yohoo.com").compare("hello@yahoo.com") == 0);
+    XCTAssert(edsc->suggestDomainCorrection("hello@yhoo.com").compare("hello@yahoo.com") == 0);
+    XCTAssert(edsc->suggestDomainCorrection("hello@ayhoo.com").compare("hello@yahoo.com") == 0);
+    XCTAssert(edsc->suggestDomainCorrection("hello@yhoo.com").compare("hello@yahoo.com") == 0);
+    XCTAssert(edsc->suggestDomainCorrection("hello@outloo.com").compare("hello@outlook.com") == 0);
+    XCTAssert(edsc->suggestDomainCorrection("hello@comcats.com").compare("hello@comcast.com") == 0);
     
 
     // private tests

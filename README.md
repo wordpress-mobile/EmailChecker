@@ -25,8 +25,18 @@ library in your build.gradle file, for instance:
 ## How to use it on iOS
 
 
+## Directory structure
+
+    |-- common                  # common native code
+    |-- android
+    |   |-- jni                 # android specific native code
+    |   `-- src                 # android specific java code
+    `-- ios
+        |---- EmailChecker      # ios specific code
+        `---- EmailCheckerTests # tests
 
 ## Apps that use this library
+
 - [WordPress for Android][1]
 
 ## LICENSE

@@ -4,8 +4,6 @@
 #include <string>
 #include <unordered_set>
 
-#define private public
-
 class EmailDomainSpellChecker {
 private:
     std::unordered_set<std::string> mModel;

@@ -1,6 +1,9 @@
 # built application files
 *.apk
 *.ap_
+*.so
+*.o
+*.a
 
 # files for the dex VM
 *.dex
@@ -16,3 +19,8 @@
 *.ipr
 *.iws
 .idea/
+
+# build dir
+bin/
+obj/
+build/

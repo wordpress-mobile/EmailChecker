@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
   s.license      = 'MIT'
   s.author       = { "Maxime Biais" => "maxime.biais@gmail.com" }
   s.platform     = :ios, "5.0"
+  s.library      = 'c++'
   s.source       = { :git => "https://github.com/wordpress-mobile/EmailChecker.git", :tag => "0.1" }
   s.source_files = 'ios/EmailChecker/**/*.{h,mm}', 'common/**/*.{h,cpp}'
 

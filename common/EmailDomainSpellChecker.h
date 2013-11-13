@@ -6,22 +6,19 @@
 
 #define private public
 
-using namespace std;
-
 class EmailDomainSpellChecker {
 private:
-    unordered_set<string> mModel;
+    std::unordered_set<std::string> mModel;
 
 private:
-    void known(const unordered_set<string> &words, unordered_set<string> &results);
-    void edits(const string &word, unordered_set<string> &results);
-    string suggest(const string &word);
-    string extractDomain(const string &word);
+    void known(const std::unordered_set<std::string> &words, std::unordered_set<std::string> &results);
+    void edits(const std::string &word, std::unordered_set<std::string> &results);
+    std::string suggest(const std::string &word);
+    std::string extractDomain(const std::string &word);
 
 public:
     EmailDomainSpellChecker();
-    void init();
-    string suggestDomainCorrection(const string &word);
+    std::string suggestDomainCorrection(const std::string &word);
 };
 
 #endif

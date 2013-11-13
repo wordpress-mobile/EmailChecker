@@ -2,7 +2,7 @@
 #include "EmailDomainSpellChecker.h"
 #include <iostream>
 
-const static unordered_set<std::string> sModel = {
+const static std::unordered_set<std::string> sModel = {
     "gmail.com",
     "yahoo.com",
     "hotmail.com",
@@ -17,9 +17,9 @@ EmailDomainSpellChecker::EmailDomainSpellChecker() {
 
 #pragma mark - Private methods
 
-string EmailDomainSpellChecker::suggest(const string &word) {
-    unordered_set<string> candidates;
-    unordered_set<string> results;
+std::string EmailDomainSpellChecker::suggest(const std::string &word) {
+    std::unordered_set<std::string> candidates;
+    std::unordered_set<std::string> results;
     
     // word is not mispelled
     if (sModel.find(word) != sModel.end()) {
@@ -34,34 +34,28 @@ string EmailDomainSpellChecker::suggest(const string &word) {
         return *candidates.begin();
     }
 
-    // second step edits (edits of edits) if nothing found previously
-    for (unordered_set<string>::const_iterator i = results.begin(); i != results.end(); i++) {
-        unordered_set<string> secondStepResults;
-        edits(*i, secondStepResults);
-        known(secondStepResults, candidates);
-        if (candidates.size() > 0) {
-            return *candidates.begin();
-        }
-    }
     return "";
 }
 
-void EmailDomainSpellChecker::known(const unordered_set<string> &words, unordered_set<string> &results) {
-    for (unordered_set<string>::const_iterator i = words.begin(); i != words.end(); i++) {
+void EmailDomainSpellChecker::known(const std::unordered_set<std::string> &words,
+                                    std::unordered_set<std::string> &results) {
+    for (std::unordered_set<std::string>::const_iterator i = words.begin(); i != words.end(); i++) {
         if (sModel.find(*i) != sModel.end()) {
             results.insert(*i);
         }
     }
 }
 
-void EmailDomainSpellChecker::edits(const string &word, unordered_set<string> &results) {
+void EmailDomainSpellChecker::edits(const std::string &word, std::unordered_set<std::string> &results) {
     // deletes
-    for (size_t i = 0;i < word.size(); i++) {
+    for (size_t i = 0; i < word.size(); i++) {
         results.insert(word.substr(0, i) + word.substr(i + 1));
     }
     // transposes
-    for (size_t i = 0;i < word.size() - 1;i++) {
-        results.insert(word.substr(0, i) + word[i + 1] + word.substr(i + 2));
+    for (size_t i = 0; i < word.size() - 1; i++) {
+        std::string tmp = word.substr(0, i) + word[i + 1] + word[i] + word.substr(i + 2);
+        results.insert(tmp);
+        std::cout << tmp << "\n";
     }
     // replaces
     for (size_t i = 0; i < word.size(); i++) {
@@ -79,14 +73,14 @@ void EmailDomainSpellChecker::edits(const string &word, unordered_set<string> &r
 
 #pragma mark - Public methods
 
-string EmailDomainSpellChecker::suggestDomainCorrection(const string &emailAddress) {
+std::string EmailDomainSpellChecker::suggestDomainCorrection(const std::string &emailAddress) {
     size_t atCharPosition = emailAddress.find('@');
-    string extractedDomain = string(emailAddress.data() + atCharPosition + 1);
+    std::string extractedDomain = std::string(emailAddress.data() + atCharPosition + 1);
     // don't check domain name shorter than 1 char
     if (extractedDomain.size() <= 1) {
         return emailAddress;
     }
-    string suggestion = suggest(extractedDomain);
+    std::string suggestion = suggest(extractedDomain);
     // If domain suggestion is the same as original, return original email address or not found
     if (suggestion.compare(extractedDomain) == 0 || suggestion.size() == 0) {
         return emailAddress;

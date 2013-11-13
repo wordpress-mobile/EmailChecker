@@ -1,11 +1,9 @@
 #include "EmailDomainSpellChecker.h"
 
 const static std::unordered_set<std::string> sModel = {
-    "gmail.com",
-    "yahoo.com",
-    "hotmail.com",
-    "outlook.com",
-    "comcast.com",
+    "yahoo.com", "google.com", "hotmail.com", "gmail.com", "me.com", "aol.com", "mac.com",
+    "live.com", "comcast.net", "comcast.com", "googlemail.com", "msn.com", "hotmail.co.uk", "yahoo.co.uk",
+    "facebook.com", "verizon.net", "sbcglobal.net", "att.net", "gmx.com", "mail.com", "outlook.com",
 };
 
 #pragma mark - Constructors and destructore
@@ -51,7 +49,7 @@ void EmailDomainSpellChecker::edits(const std::string &word, std::unordered_set<
     }
     // transposes
     for (size_t i = 0; i < word.size() - 1; i++) {
-        results.insert(word.substr(0, i) + word[i + 1] + word[i] + word.substr(i + 2);
+        results.insert(word.substr(0, i) + word[i + 1] + word[i] + word.substr(i + 2));
     }
     // replaces
     for (size_t i = 0; i < word.size(); i++) {

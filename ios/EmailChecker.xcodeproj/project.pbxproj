@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		507765701833AB6000BA6CA5 /* EmailChecker.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5077656F1833AB6000BA6CA5 /* EmailChecker.mm */; };
 		5086AFC118324A3F00ED61AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5086AFC018324A3F00ED61AF /* Foundation.framework */; };
 		5086AFC618324A3F00ED61AF /* EmailChecker.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5086AFC518324A3F00ED61AF /* EmailChecker.h */; };
-		5086AFC818324A3F00ED61AF /* EmailChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5086AFC718324A3F00ED61AF /* EmailChecker.m */; };
 		5086AFCF18324A3F00ED61AF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5086AFCE18324A3F00ED61AF /* XCTest.framework */; };
 		5086AFD018324A3F00ED61AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5086AFC018324A3F00ED61AF /* Foundation.framework */; };
 		5086AFD218324A3F00ED61AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5086AFD118324A3F00ED61AF /* UIKit.framework */; };
@@ -43,11 +43,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5077656F1833AB6000BA6CA5 /* EmailChecker.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EmailChecker.mm; sourceTree = "<group>"; };
 		5086AFBD18324A3F00ED61AF /* libEmailChecker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEmailChecker.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5086AFC018324A3F00ED61AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5086AFC418324A3F00ED61AF /* EmailChecker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EmailChecker-Prefix.pch"; sourceTree = "<group>"; };
 		5086AFC518324A3F00ED61AF /* EmailChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmailChecker.h; sourceTree = "<group>"; };
-		5086AFC718324A3F00ED61AF /* EmailChecker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmailChecker.m; sourceTree = "<group>"; };
 		5086AFCD18324A3F00ED61AF /* EmailCheckerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmailCheckerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5086AFCE18324A3F00ED61AF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5086AFD118324A3F00ED61AF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -114,8 +114,8 @@
 		5086AFC218324A3F00ED61AF /* EmailChecker */ = {
 			isa = PBXGroup;
 			children = (
+				5077656F1833AB6000BA6CA5 /* EmailChecker.mm */,
 				5086AFC518324A3F00ED61AF /* EmailChecker.h */,
-				5086AFC718324A3F00ED61AF /* EmailChecker.m */,
 				5086AFC318324A3F00ED61AF /* Supporting Files */,
 			);
 			path = EmailChecker;
@@ -238,7 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5086AFC818324A3F00ED61AF /* EmailChecker.m in Sources */,
+				507765701833AB6000BA6CA5 /* EmailChecker.mm in Sources */,
 				50F8B77D18327EF100ABE203 /* EmailDomainSpellChecker.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

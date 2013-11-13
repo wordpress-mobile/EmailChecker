@@ -57,8 +57,13 @@ Sample usage:
 
 ## Apps that use this library
 
-- [WordPress for Android][2]
-![Screenshot from WordPress Android](https://i.cloudup.com/2uXxK9muFu.png)
+### [WordPress for Android][2]
+
+![Screenshot from WordPress Android](https://i.cloudup.com/rUxkHNsm5c.png)
+
+### [WordPress for iOS][3]
+
+![Screenshot from WordPress Android](https://i.cloudup.com/2Smrv9VYbJ.png)
 
 ## LICENSE
 
@@ -66,3 +71,4 @@ This library is dual licensed unded MIT and GPL v2.
 
 [1]: http://cocoapods.org
 [2]: https://github.com/wordpress-mobile/WordPress-Android
+[3]: https://github.com/wordpress-mobile/WordPress-iOS

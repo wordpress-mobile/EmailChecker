@@ -1,6 +1,4 @@
-
 #include "EmailDomainSpellChecker.h"
-#include <iostream>
 
 const static std::unordered_set<std::string> sModel = {
     "gmail.com",
@@ -20,16 +18,16 @@ EmailDomainSpellChecker::EmailDomainSpellChecker() {
 std::string EmailDomainSpellChecker::suggest(const std::string &word) {
     std::unordered_set<std::string> candidates;
     std::unordered_set<std::string> results;
-    
+
     // word is not mispelled
     if (sModel.find(word) != sModel.end()) {
         return word;
     }
-    
+
     // add edited and known words the results
     edits(word, results);
     known(results, candidates);
-    
+
     if (candidates.size() > 0) {
         return *candidates.begin();
     }
@@ -53,9 +51,7 @@ void EmailDomainSpellChecker::edits(const std::string &word, std::unordered_set<
     }
     // transposes
     for (size_t i = 0; i < word.size() - 1; i++) {
-        std::string tmp = word.substr(0, i) + word[i + 1] + word[i] + word.substr(i + 2);
-        results.insert(tmp);
-        std::cout << tmp << "\n";
+        results.insert(word.substr(0, i) + word[i + 1] + word[i] + word.substr(i + 2);
     }
     // replaces
     for (size_t i = 0; i < word.size(); i++) {

@@ -9,7 +9,7 @@ The library is written in C++ and is inspired by the algorithm
 described here: http://norvig.com/spell-correct.html (Warning, it's
 not the exact same algo).
 
-## How to use it on Android
+## How to use it in an Android project
 
 Currently gradle doesn't support NDK, so we used a trick to make it
 work: it generates a temporary .jar file containing .so, this file is
@@ -30,7 +30,7 @@ Sample usage:
         Log.v("FIXME", "did you mean: " + suggest + " ?");
     }
 
-## How to use it on iOS
+## How to use it in an iOS project
 
 If you use [CocoaPods][1], you just have to add the following pod to
 your dependency list:

@@ -4,6 +4,7 @@ const static std::unordered_set<std::string> sModel = {
     "yahoo.com", "google.com", "hotmail.com", "gmail.com", "me.com", "aol.com", "mac.com",
     "live.com", "comcast.net", "comcast.com", "googlemail.com", "msn.com", "hotmail.co.uk", "yahoo.co.uk",
     "facebook.com", "verizon.net", "sbcglobal.net", "att.net", "gmx.com", "mail.com", "outlook.com",
+    "ymail.com",
 };
 
 #pragma mark - Constructors and destructore

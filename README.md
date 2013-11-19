@@ -16,7 +16,12 @@ work: it generates a temporary .jar file containing .so, this file is
 used as a jar dependency for the final .aar file.
 
 If you want to use it in your Android project, your can add it as a
-library in your build.gradle file, for instance:
+library in your build.gradle file, don't forget to add the
+wordpress-mobile maven repository. For instance:
+
+    repositories {
+        maven { url 'http://wordpress-mobile.github.io/WordPress-Android' }
+    }
 
     dependencies {
         compile 'org.wordpress:emailchecker:0.1'

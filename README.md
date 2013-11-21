@@ -73,12 +73,14 @@ Sample usage:
 
 * For Android
 
-    ```$ cd android && gradle build
+    ```
+    $ cd android && gradle build
     ```
 
 * For iOS
 
-    ```$ cd ios && xcodebuild
+    ```
+    $ cd ios && xcodebuild
     ```
 
 ## Apps that use this library

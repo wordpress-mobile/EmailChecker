@@ -50,15 +50,36 @@ Sample usage:
         NSLog(@"Did you mean: %@", suggestedEmail);
     }
 
-## Directory structure
+## Hack it
 
-    |-- common                  # common native code
+### Directory structure
+
+
+    |-- common                  # common C++ native code
     |-- android
-    |   |-- jni                 # android specific native code
-    |   `-- src                 # android specific java code
+    |   |-- jni                 # android specific C++ native code
+    |   `-- src                 # android specific Java code
     `-- ios
-        |-- EmailChecker        # ios specific code
-        `-- EmailCheckerTests   # tests
+        |-- EmailChecker        # iOS specific Obj-C++ code
+        `-- EmailCheckerTests   # Obj-C++ tests (testing C++ code in common/)
+
+### The steps to add a new public method
+
+1. Create the public method in common/
+1. Wrap it as a Java jni method in android/jni and android/java
+1. Wrap it as a Obj-C++ method in ios/EmailChecker/
+
+### Build
+
+* For Android
+
+    ```$ cd android && gradle build
+    ```
+
+* For iOS
+
+    ```$ cd ios && xcodebuild
+    ```
 
 ## Apps that use this library
 

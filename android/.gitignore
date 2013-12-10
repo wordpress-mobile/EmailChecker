@@ -1,3 +1,5 @@
 /build
 /libs/
 .gradle/
+local.properties
+deploy-mvn-artifact.sh

@@ -26,6 +26,7 @@ task nativeLibsToJar(
 
 tasks.withType(Compile) {
 	compileTask -> compileTask.dependsOn(nativeLibsToJar)
+	nativeLibsToJar.dependsOn ndkBuild
 }
 
 clean.dependsOn 'cleanNativeLibsToJar'

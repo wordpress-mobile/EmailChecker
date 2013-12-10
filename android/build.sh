@@ -1,6 +1,5 @@
 #!/bin/sh
 
-ndk-build clean
 rm -rf libs
 gradle build
 

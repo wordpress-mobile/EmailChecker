@@ -4,12 +4,10 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:0.8.+'
-        classpath 'com.github.dcendents:android-maven-plugin:1.0'
     }
 }
 
 apply plugin: 'android-library'
-apply plugin: 'maven-publish'
 
 group 'org.wordpress'
 version '0.2'
@@ -29,7 +27,7 @@ android {
             moduleName "emailchecker"
             cFlags "-std=gnu++11"
             stl "gnustl_shared"
-            abiFilter "mips"
+            abiFilter "armeabi"
         }
     }
 }

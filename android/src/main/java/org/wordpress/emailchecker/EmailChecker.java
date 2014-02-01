@@ -1,10 +1,26 @@
 package org.wordpress.emailchecker;
 
+import android.util.Log;
+
 public class EmailChecker {
+    static boolean rInitialized;
+
     static {
-        System.loadLibrary("gnustl_shared");
-        System.loadLibrary("emailchecker");
+        try {
+            System.loadLibrary("gnustl_shared");
+            System.loadLibrary("emailchecker");
+            rInitialized = true;
+        } catch (UnsatisfiedLinkError e) {
+            Log.e("EmailChecker", "Unable to load native libraries, EmailChecker disabled");
+        }
     }
 
-    public native String suggestDomainCorrection(String email);
+    public String suggestDomainCorrection(String email) {
+        if (rInitialized) {
+            return suggestDomainCorrectionNative(email);
+        }
+        return email;
+    }
+
+    public native String suggestDomainCorrectionNative(String email);
 }

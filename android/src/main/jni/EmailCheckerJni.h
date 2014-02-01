@@ -7,7 +7,7 @@
 
 extern "C" {
 
-JNIEXPORT jstring JNICALL Java_org_wordpress_emailchecker_EmailChecker_suggestDomainCorrection
+JNIEXPORT jstring JNICALL Java_org_wordpress_emailchecker_EmailChecker_suggestDomainCorrectionNative
   (JNIEnv *, jobject, jstring);
 
 }

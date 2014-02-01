@@ -1,7 +1,11 @@
 #!/bin/sh
 
-rm -rf libs
-gradle build
+./gradlew build
+
+VERSION=0.2
+GROUP_ID=org.wordpress
 
 # Push to the local maven repo
-mvn install:install-file -Dfile=build/libs/EmailChecker-0.1-debug.aar -DgroupId=org.wordpress -DartifactId=emailchecker -Dpackaging=aar -Dversion=0.1
+mvn install:install-file -Dfile=build/libs/EmailChecker-$VERSION.aar -DgroupId=$GROUP_ID -DartifactId=emailchecker -Dpackaging=aar -Dversion=$VERSION
+
+mvn install:install-file -Dfile=build/libs/EmailChecker-$VERSION-debug.aar -DgroupId=$GROUP_ID -DartifactId=emailchecker-debug -Dpackaging=aar -Dversion=$VERSION

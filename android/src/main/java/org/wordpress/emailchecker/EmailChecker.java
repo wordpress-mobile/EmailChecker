@@ -3,20 +3,20 @@ package org.wordpress.emailchecker;
 import android.util.Log;
 
 public class EmailChecker {
-    static boolean rInitialized;
+    static boolean sInitialized;
 
     static {
         try {
             System.loadLibrary("gnustl_shared");
             System.loadLibrary("emailchecker");
-            rInitialized = true;
+            sInitialized = true;
         } catch (UnsatisfiedLinkError e) {
             Log.e("EmailChecker", "Unable to load native libraries, EmailChecker disabled");
         }
     }
 
     public String suggestDomainCorrection(String email) {
-        if (rInitialized) {
+        if (sInitialized) {
             return suggestDomainCorrectionNative(email);
         }
         return email;

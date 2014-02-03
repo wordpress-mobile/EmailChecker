@@ -24,7 +24,8 @@ wordpress-mobile maven repository. For instance:
     }
 
     dependencies {
-        compile 'org.wordpress:emailchecker:0.1'
+        // use the latest 0.x version
+        compile 'org.wordpress:emailchecker:0.+'
     }
 
 Sample usage:
@@ -53,7 +54,6 @@ Sample usage:
 ## Hack it
 
 ### Directory structure
-
 
     |-- common                  # common C++ native code
     |-- android
@@ -100,3 +100,15 @@ This library is dual licensed unded MIT and GPL v2.
 [1]: http://cocoapods.org
 [2]: https://github.com/wordpress-mobile/WordPress-Android
 [3]: https://github.com/wordpress-mobile/WordPress-iOS
+
+## CHANGELOG
+
+### 0.2
+
+* Failback to the identity function when native libraries can't be loaded 
+  (weird Android ROMs).
+* Update to gradle-android 0.8 and use gradle to build jni code
+
+### 0.1
+
+* Initial release

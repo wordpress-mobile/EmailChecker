@@ -3,14 +3,14 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.8.+'
+        classpath 'com.android.tools.build:gradle:0.9.+'
     }
 }
 
 apply plugin: 'android-library'
 
 group 'org.wordpress'
-version '0.2'
+version '0.3'
 
 repositories {
     mavenCentral()
@@ -19,6 +19,7 @@ repositories {
 android {
     compileSdkVersion 19
     buildToolsVersion "19.0.0"
+    publishNonDefault true
 
     defaultConfig {
         minSdkVersion 7
@@ -27,7 +28,7 @@ android {
             moduleName "emailchecker"
             cFlags "-std=gnu++11"
             stl "gnustl_shared"
-            abiFilter "armeabi"
+            abiFilter "armeabi x86 mips"
         }
     }
 }

@@ -2,4 +2,4 @@
 /libs/
 .gradle/
 local.properties
-deploy-mvn-artifact.sh
+tools/deploy-mvn-artifact.conf

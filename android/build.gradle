@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.9.+'
+        classpath 'com.android.tools.build:gradle:0.12.+'
     }
 }
 
@@ -18,7 +18,7 @@ repositories {
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "19.0.0"
+    buildToolsVersion "19.1.0"
     publishNonDefault true
 
     defaultConfig {
@@ -31,8 +31,4 @@ android {
             abiFilter "armeabi x86 mips"
         }
     }
-}
-
-dependencies {
-	compile 'com.android.support:appcompat-v7:+'
 }

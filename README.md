@@ -1,5 +1,13 @@
 # Email Checker for Android and iOS
 
+## Deprecated
+
+This library is deprecated.
+
+For Android please check out [EmailChecker-Android](https://github.com/wordpress-mobile/EmailChecker-Android)
+
+For iOS please check out [EmailTypoChecker.swift](https://github.com/wordpress-mobile/WordPress-iOS/blob/25f9c8c883eff1b4d727cbd04f71448d956d9ca7/WordPress/Classes/Utility/EmailTypoChecker.swift)
+
 ## Introduction
 
 This library helps to catch simple email domain typos. Its intended to

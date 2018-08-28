@@ -91,16 +91,6 @@ Sample usage:
     $ cd ios && xcodebuild
     ```
 
-## Apps that use this library
-
-### [WordPress for Android][2]
-
-![Screenshot from WordPress Android](https://i.cloudup.com/rUxkHNsm5c.png)
-
-### [WordPress for iOS][3]
-
-![Screenshot from WordPress Android](https://i.cloudup.com/2Smrv9VYbJ.png)
-
 ## LICENSE
 
 This library is dual licensed unded MIT and GPL v2.
